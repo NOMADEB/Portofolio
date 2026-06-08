@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ahwanulm.me)",
+      "WebSearch",
+      "Bash(npm install *)",
+      "Bash(node -e \"const p=require\\('/Users/a1/Documents/portofolio/package.json'\\); console.log\\('framer-motion', p.dependencies['framer-motion']\\); console.log\\('react-icons', p.dependencies['react-icons']\\)\")",
+      "Bash(npm run *)",
+      "Bash(node -e \"console.log\\('react-router-dom', require\\('/Users/a1/Documents/portofolio/package.json'\\).dependencies['react-router-dom']\\)\")",
+      "Bash(find ~/Downloads ~/Desktop ~/Pictures -maxdepth 1 -type f \\\\\\( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \\\\\\) -mtime -7 2>/dev/null | head -20 || echo \"none found\")",
+      "Read(//Users/a1/Downloads/**)",
+      "Bash(sips --resampleWidth 600 image/foto.png)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(sips -s format jpeg -s formatOptions 80 image/foto.png --out image/foto.jpg)",
+      "Bash(awk 'NR>1{print $5, $9}')"
+    ]
+  }
+}
