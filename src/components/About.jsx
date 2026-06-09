@@ -110,6 +110,7 @@ export default function About() {
       viewport={{ once: true, amount: 0.2 }}
       className="section-card mb-16 scroll-mt-24"
     >
+      <div className="block md:hidden mb-4 rounded-lg bg-red-600/90 text-white px-4 py-2 text-sm font-medium">DEBUG: About component mounted (mobile)</div>
       <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
         <motion.div variants={fadeUp} className="max-w-full lg:max-w-xl">
           <p className="text-sm uppercase tracking-[0.35em] text-sky-600 dark:text-sky-300">
