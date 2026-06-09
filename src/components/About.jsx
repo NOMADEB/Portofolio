@@ -131,7 +131,7 @@ export default function About() {
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               className="rounded-3xl border border-slate-200/70 bg-slate-50/90 p-6 dark:border-slate-800/70 dark:bg-slate-950/90"
             >
-              <p className="text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">
+              <p className="text-2xl font-semibold text-slate-900 dark:text-white sm:text-3xl">
                 {stat.text ? (
                   stat.text
                 ) : (
