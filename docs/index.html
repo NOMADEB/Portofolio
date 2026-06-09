@@ -29,5 +29,35 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (function () {
+        function showErrorOverlay(msg) {
+          try {
+            var existing = document.getElementById('js-error-overlay');
+            if (existing) existing.remove();
+            var el = document.createElement('div');
+            el.id = 'js-error-overlay';
+            el.style = 'position:fixed;left:8px;top:8px;right:8px;bottom:8px;background:rgba(2,6,23,0.95);color:#e6eef8;z-index:99999;padding:18px;border-radius:12px;overflow:auto;font-family:ui-sans-serif, system-ui, sans-serif;';
+            var pre = document.createElement('pre');
+            pre.style = 'white-space:pre-wrap;word-break:break-word;font-size:13px;line-height:1.3;margin:0;';
+            pre.textContent = msg || 'Unknown error';
+            var title = document.createElement('div');
+            title.style = 'font-weight:600;margin-bottom:8px;font-size:14px';
+            title.textContent = 'JavaScript error — buka menu dan salin pesan ini ke chat';
+            el.appendChild(title);
+            el.appendChild(pre);
+            document.body.appendChild(el);
+          } catch (e) {}
+        }
+        window.onerror = function (msg, src, line, col, err) {
+          showErrorOverlay(msg + '\n' + (src || '') + ':' + (line || '') + ':' + (col || '') + '\n' + (err && err.stack ? err.stack : ''));
+        };
+        window.addEventListener('unhandledrejection', function (e) {
+          try {
+            showErrorOverlay((e && e.reason && e.reason.stack) || String(e));
+          } catch (er) {}
+        });
+      })();
+    </script>
   </body>
 </html>
